@@ -103,25 +103,18 @@ coluna = st.selectbox(
     'Selecione a variável',
      df.columns)
 
-
 st.write(coluna)
-#grafcoluna=df[df["Region"]==coluna]
-
-chart_data = df.coluna.value_counts()
-
-#st.line_chart(chart_data)
+chart_data = df[coluna].value_counts()
+st.line_chart(chart_data)
 
 
 
-#map_data = df[['latitude','longitude']]
-
-#st.map(map_data)
+map_data = df[['latitude','longitude']]
+st.map(map_data)
 st.map(df,
     latitude='latitude',
     longitude='longitude',use_container_width=True
     )#size='col3',color='Vacinado'
-
-# Add a selectbox to the sidebar:
 
     
 
