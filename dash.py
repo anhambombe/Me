@@ -4,7 +4,6 @@ import numpy as np
 import openpyxl
 
 import requests
-
 import time
 
 st.title("LQAS")
