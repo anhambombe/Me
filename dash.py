@@ -101,8 +101,7 @@ def load_data():
 df=load_data()
 coluna = st.selectbox(
     'Selecione a variável',
-     list(df.columns),
-     list(df.columns)[0])
+     df.columns)
 
 
 st.write(coluna)
