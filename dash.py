@@ -99,18 +99,16 @@ def load_data():
 
     #print (df)
 df=load_data()
-option = st.selectbox(
-    'Selecione a Ronda',
-     df['Rnd'].unique())
+coluna = st.selectbox(
+    'Selecione a variável',
+     list(df.columns),
+     list(df.columns)[0])
 
-'You selected: ', option
 
-coluna=st.sidebar.selectbox(df["Region"].unique()
-#df["Region"].unique()[0])
+st.write(coluna)
+#grafcoluna=df[df["Region"]==coluna]
 
-grafcoluna=df[df["Region"]==coluna]
-
-chart_data = df.grafcoluna.value_counts()
+chart_data = df.coluna.value_counts()
 
 #st.line_chart(chart_data)
 
