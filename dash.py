@@ -5,7 +5,7 @@ import openpyxl
 
 import requests
 import time
-st.page_set_config(
+st.set_page_config(
   page_title="lqas",
   layout="wide",
   page_icon="🌍")
