@@ -124,9 +124,9 @@ graf=["line","bar"]
 graftype=st.selectbox("Tipo de grafico", graf)
         
 if graftype =="line":
-    return st.line_chart(chart_data)
+  return st.line_chart(chart_data)
 else:
-    return st.bar_chart(chart_data)
+  return st.bar_chart(chart_data)
 
 
 
