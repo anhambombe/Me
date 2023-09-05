@@ -102,10 +102,12 @@ df=load_data()
 #st.selectbox("Provincia", 
              #["Selecione uma coluna"] + 
              #list(df.columns))
-coluna = st.selectbox(
+coluna = df.columns.tolist()
+
+st.selectbox(
     "Selecione a variável",
-  df.columns.tolist(),
-  [df.columns.tolist()[0]])
+  coluna,
+  [coluna[0]])
 
 
 st.write(coluna)
