@@ -109,7 +109,7 @@ grafcoluna=st.selectbox(
   coluna)
 
 
-st.write(grafcoluna)
+st.write(coluna[grafcoluna])
 chart_data = df[grafcoluna].value_counts()
 st.line_chart(chart_data)
 
