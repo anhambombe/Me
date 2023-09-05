@@ -5,8 +5,11 @@ import openpyxl
 
 import requests
 import time
-
-st.title("LQAS")
+st.page_set_config(
+  page_title="lqas",
+  layout="wide",
+  page_icon="🌍")
+#st.title("LQAS")
 st.write("Dashboard do LQAS:")
 
 'Starting a long computation...'
@@ -131,16 +134,16 @@ else:
   st.bar_chart(chart_data)
 
 with col3:
-  latitude=st.selectbox(
+  lat=st.selectbox(
     "Selecione a latitude",
   coluna)
   with col4:
-    longitude=st.selectbox(
+    long=st.selectbox(
     "Selecione a longitude",
   coluna)
 
-map_data = df[['latitude','longitude']]
-st.map(map_data)
+#map_data = df[['latitude','longitude']]
+st.map(lat,long)
 st.map(df,
     latitude='latitude',
     longitude='longitude',use_container_width=True
