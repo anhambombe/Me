@@ -137,7 +137,7 @@ if graftype =="line":
 if graftype =="bar":
   st.bar_chart(chart_data)
 else:
-  st.map(df[lat],df[long])
+  st.map(latitude=df[lat],longitude=df[long])
 
 #map_data = pd.DataFrame(lat,long)
 st.map(df,
