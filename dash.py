@@ -143,7 +143,7 @@ with col3:
   coluna)
 
 #map_data = df[['latitude','longitude']]
-st.map(lat,long)
+st.map(latitude=lat,longitude=long)
 st.map(df,
     latitude='latitude',
     longitude='longitude',use_container_width=True
