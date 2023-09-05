@@ -18,7 +18,7 @@ bar = st.progress(0)
 for i in range(100):
   # Update the progress bar with each iteration.
   latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
+  bar.progress(i&"%" + 1)
   time.sleep(0.051)
 
 DATE_COLUMN = 'Date_of_LQAS'
@@ -112,6 +112,7 @@ grafcoluna=st.selectbox(
 st.write(grafcoluna)
 chart_data = df[grafcoluna].value_counts()
 st.line_chart(chart_data)
+st.bar_chart(chart_data)
 
 
 
@@ -134,5 +135,5 @@ resumo.columns = ["Total"]
 
 # Escreve o DataFrame na tela
 st.write(resumo)
-st.line_chart(chart_data)
+
 
