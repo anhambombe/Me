@@ -160,9 +160,9 @@ st.write(resumo)
 
 hide_st_style ="""
 <style>
-#MainMenu {visibility: hiden;}
-footer {visibility: hiden;}
-header {visibility: hiden;}
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
 <style>
 """
 st.markdown(hide_st_style,unsafe_allow_html=True)
