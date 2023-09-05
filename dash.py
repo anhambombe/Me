@@ -102,14 +102,14 @@ df=load_data()
 #st.selectbox("Provincia", 
              #["Selecione uma coluna"] + 
              #list(df.columns))
-coluna = df.columns.tolist()
+coluna = pd.DataFrame(df.columns.tolist())
 
 grafcoluna=st.selectbox(
     "Selecione a variável",
   coluna)
 
 
-st.write(coluna[grafcoluna])
+st.write(grafcoluna)
 chart_data = df[grafcoluna].value_counts()
 st.line_chart(chart_data)
 
