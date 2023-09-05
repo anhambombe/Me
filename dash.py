@@ -135,7 +135,7 @@ with col3:
     "Selecione a latitude",
   coluna)
   with col4:
-  longitude=st.selectbox(
+    longitude=st.selectbox(
     "Selecione a longitude",
   coluna)
 
