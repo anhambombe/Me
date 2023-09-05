@@ -117,8 +117,16 @@ grafcoluna=st.selectbox(
 
 st.write(grafcoluna)
 chart_data = df[grafcoluna].value_counts()
-st.line_chart(chart_data)
-st.bar_chart(chart_data)
+#st.line_chart(chart_data)
+#st.bar_chart(chart_data)
+
+graf=["line","bar"]
+graftype=st.selectbox("Tipo de grafico", graf)
+        
+    if graftype =="line":
+        return st.line_chart(chart_data)
+    else:
+        return st.bar_chart(chart_data)
 
 
 
