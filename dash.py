@@ -113,37 +113,33 @@ df=load_data()
              #list(df.columns))
 coluna = pd.DataFrame(df.columns.tolist())
 col1, col2, col3, col4=st.columns(4)
+graf=["line","bar","map]
 with col1:
-  grafcoluna=st.selectbox(
-    "Selecione a variável",
-  coluna)
+  grafcoluna=st.selectbox("Selecione a variável", coluna)
+
+with col2:
+  graftype=st.radio("Tipo de grafico", graf)
+
+with col3:
+  lat=st.selectbox("Selecione a latitude",coluna)
+
+with col4:
+    long=st.selectbox("Selecione a longitude",coluna)
 
 
-st.write(grafcoluna)
+#st.write(grafcoluna)
 chart_data = df[grafcoluna].value_counts()
 #st.line_chart(chart_data)
 #st.bar_chart(chart_data)
-
-graf=["line","bar"]
-with col2:
-  graftype=st.radio("Tipo de grafico", graf)
         
 if graftype =="line":
   st.line_chart(chart_data)
-else:
+if graftype =="bar":
   st.bar_chart(chart_data)
+else:
+  st.map(df[lat],df[long])
 
-with col3:
-  lat=st.selectbox(
-    "Selecione a latitude",
-  coluna)
-  with col4:
-    long=st.selectbox(
-    "Selecione a longitude",
-  coluna)
-
-#map_data = df[['latitude','longitude']]
-st.map(latitude=lat,longitude=long)
+#map_data = pd.DataFrame(lat,long)
 st.map(df,
     latitude='latitude',
     longitude='longitude',use_container_width=True
