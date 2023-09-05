@@ -102,7 +102,7 @@ def load_data():
                                                       (df["Count_HH[1]/Care_Giver_Informed_SIA"] == 1) , "Yes", "No")
     return df
 
-
+col1, col2, col3, col4=st.columns()
     #print (df)
 df=load_data()
 #st.selectbox("Provincia", 
@@ -110,7 +110,8 @@ df=load_data()
              #list(df.columns))
 coluna = pd.DataFrame(df.columns.tolist())
 
-grafcoluna=st.selectbox(
+with col1:
+  grafcoluna=st.selectbox(
     "Selecione a variável",
   coluna)
 
@@ -121,14 +122,22 @@ chart_data = df[grafcoluna].value_counts()
 #st.bar_chart(chart_data)
 
 graf=["line","bar"]
-graftype=st.radio("Tipo de grafico", graf)
+with col2:
+  graftype=st.radio("Tipo de grafico", graf)
         
 if graftype =="line":
   st.line_chart(chart_data)
 else:
   st.bar_chart(chart_data)
 
-
+with col3:
+  latitude=st.selectbox(
+    "Selecione a latitude",
+  coluna)
+  with col4:
+  longitude=st.selectbox(
+    "Selecione a longitude",
+  coluna)
 
 map_data = df[['latitude','longitude']]
 st.map(map_data)
