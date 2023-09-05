@@ -165,6 +165,6 @@ footer {visibility: hiden;}
 header {visibility: hiden;}
 <style>
 """
-st,markdown(hide_st_style,unsafe_allow_html=True)
+st.markdown(hide_st_style,unsafe_allow_html=True)
 
 
