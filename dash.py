@@ -113,7 +113,7 @@ df=load_data()
              #list(df.columns))
 coluna = pd.DataFrame(df.columns.tolist())
 col1, col2, col3, col4=st.columns(4)
-graf=["line","bar","map]
+graf=["line","bar","map"]
 with col1:
   grafcoluna=st.selectbox("Selecione a variável", coluna)
 
