@@ -104,13 +104,13 @@ df=load_data()
              #list(df.columns))
 coluna = df.columns.tolist()
 
-st.selectbox(
+grafcoluna=st.selectbox(
     "Selecione a variável",
   coluna)
 
 
-st.write(coluna)
-chart_data = df[coluna].value_counts()
+st.write(grafcoluna)
+chart_data = df[grafcoluna].value_counts()
 st.line_chart(chart_data)
 
 
