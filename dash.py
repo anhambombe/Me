@@ -102,14 +102,14 @@ def load_data():
                                                       (df["Count_HH[1]/Care_Giver_Informed_SIA"] == 1) , "Yes", "No")
     return df
 
-col1, col2, col3, col4=st.columns(4)
+
     #print (df)
 df=load_data()
 #st.selectbox("Provincia", 
              #["Selecione uma coluna"] + 
              #list(df.columns))
 coluna = pd.DataFrame(df.columns.tolist())
-
+col1, col2, col3, col4=st.columns(4)
 with col1:
   grafcoluna=st.selectbox(
     "Selecione a variável",
