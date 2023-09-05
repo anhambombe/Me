@@ -104,8 +104,8 @@ df=load_data()
              #list(df.columns))
 coluna = st.selectbox(
     "Selecione a variável",
-    ["Escolha uma coluna abaixo"] +
-  df.columns.tolist())
+  df.columns.tolist(),
+  df.columns.tolist()[0])
 
 st.write(coluna)
 chart_data = df[coluna].value_counts()
